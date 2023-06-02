@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+    
+  postgres:
+    image: postgres:latest
+    ports:
+      - 5433:5432
+    expose:
+      - 5432
+    restart: always
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "AuthJwtExample"
+
+volumes:
+  db_volume: 
